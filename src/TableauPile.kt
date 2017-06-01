@@ -8,7 +8,7 @@ class TableauPile(var cards: MutableList<Card> = mutableListOf()) {
         }
     }
 
-    fun addCard(newCards: MutableList<Card>): Boolean {
+    fun addCards(newCards: MutableList<Card>): Boolean {
         if (cards.size > 0) {
             //new card(s) put onto a non-empty pile
             if (newCards.first().value == cards.last().value - 1 && suitCheck(newCards.first(), cards.last())) {
@@ -25,7 +25,7 @@ class TableauPile(var cards: MutableList<Card> = mutableListOf()) {
 
     fun removeCards(tappedIndex: Int) {
         for (i in tappedIndex..cards.lastIndex) {
-            cards.removeAt(i)
+            cards.removeAt(tappedIndex)
         }
         if (cards.size > 0) {
             cards.last().faceUp = true
