@@ -4,7 +4,7 @@ import GameModel.tableauPiles
 /**
  * Created by amitavk on 01/06/17.
  */
-class GamePresenter {
+object GamePresenter {
     var view: GameView? = null
 
     fun setGameView(gameView: GameView) {
